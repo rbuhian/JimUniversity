@@ -28,9 +28,8 @@ namespace JimUniversity
                       "~/Content/site.css",
                       "~/admin-lte/css/AdminLTE.css",
                       "~/admin-lte/css/skins/skin-blue.css",
-                      "~/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
-                      "~/Content/css/font-awesome.css"
-                      ));
+                      "~/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
+                      ).Include("~/Content/font-awesome.css", new CssRewriteUrlTransform()));
 
             bundles.Add(new ScriptBundle("~/admin-lte/js").Include(
              "~/admin-lte/js/adminlte.js",

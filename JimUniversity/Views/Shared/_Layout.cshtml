@@ -255,9 +255,15 @@ desired effect
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
                     
-                    <li class="@(ViewBag.Current == "index" ? "active" : "") ">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="@(ViewBag.Current == "about" ? "active" : "") ">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="@(ViewBag.Current == "contact" ? "active" : "") ">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="@(ViewBag.Current == "index" ? "active" : "") ">
+                        @Html.ActionLink(" Home ", "Index", "Home", new { @class = "fa fa-home" })
+                    </li>
+                    <li class="@(ViewBag.Current == "about" ? "active" : "") ">
+                        @Html.ActionLink(" About ", "About", "Home", new { @class = "fa fa-address-book-o" })
+                    </li>
+                    <li class="@(ViewBag.Current == "contact" ? "active" : "") ">
+                        @Html.ActionLink(" Contact ", "Contact", "Home", new { @class = "fa fa-sticky-note-o" })
+                    </li>
 
                     <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
                     <li class="treeview">
