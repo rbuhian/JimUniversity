@@ -255,14 +255,31 @@ desired effect
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
                     
+                    
                     <li class="@(ViewBag.Current == "index" ? "active" : "") ">
-                        @Html.ActionLink(" Home ", "Index", "Home", new { @class = "fa fa-home" })
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="fa fa-home"></i>
+                            <span>
+                                Home
+                            </span>
+                        </a>
                     </li>
+
                     <li class="@(ViewBag.Current == "about" ? "active" : "") ">
-                        @Html.ActionLink(" About ", "About", "Home", new { @class = "fa fa-address-book-o" })
+                        <a href="@Url.Action("About", "Home")">
+                            <i class="fa fa-address-book-o"></i>
+                            <span>
+                                About
+                            </span>
+                        </a>
                     </li>
                     <li class="@(ViewBag.Current == "contact" ? "active" : "") ">
-                        @Html.ActionLink(" Contact ", "Contact", "Home", new { @class = "fa fa-sticky-note-o" })
+                        <a href="@Url.Action("Contact", "Home")">
+                            <i class="fa fa-sticky-note-o"></i>
+                            <span>
+                                Contact
+                            </span>
+                        </a>
                     </li>
 
                     <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
