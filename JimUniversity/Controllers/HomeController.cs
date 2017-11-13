@@ -10,21 +10,20 @@ namespace JimUniversity.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Current = "active";
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            ViewBag.Current = "active";
+            
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-            ViewBag.Current = "active";
+            
             return View();
         }
     }
