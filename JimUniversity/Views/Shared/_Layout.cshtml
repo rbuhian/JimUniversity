@@ -233,7 +233,7 @@ desired effect
                         <img src="~/admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Jim Raynor</p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -265,6 +265,42 @@ desired effect
                         </a>
                     </li>
 
+                    <li class="@(ViewBag.Current == "StudIndex" ? "active" : "") ">
+                        <a href="@Url.Action("Index", "Student")">
+                            <i class="fa fa-group"></i>
+                            <span>
+                                Students
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="@(ViewBag.Current == "CourseIndex" ? "active" : "") ">
+                        <a href="@Url.Action("Index", "Course")">
+                            <i class="fa fa-pencil-square-o"></i>
+                            <span>
+                                Course
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="@(ViewBag.Current == "InstructorIndex" ? "active" : "") ">
+                        <a href="@Url.Action("Index", "Instructor")">
+                            <i class="fa fa-id-badge"></i>
+                            <span>
+                                Instructors
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="@(ViewBag.Current == "DeptIndex" ? "active" : "") ">
+                        <a href="@Url.Action("Index", "Department")">
+                            <i class="fa fa-sitemap"></i>
+                            <span>
+                                Departments
+                            </span>
+                        </a>
+                    </li>
+                    
                     <li class="@(ViewBag.Current == "about" ? "active" : "") ">
                         <a href="@Url.Action("About", "Home")">
                             <i class="fa fa-address-book-o"></i>
@@ -273,6 +309,7 @@ desired effect
                             </span>
                         </a>
                     </li>
+
                     <li class="@(ViewBag.Current == "contact" ? "active" : "") ">
                         <a href="@Url.Action("Contact", "Home")">
                             <i class="fa fa-sticky-note-o"></i>
@@ -282,19 +319,7 @@ desired effect
                         </a>
                     </li>
 
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Multilevel</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -324,10 +349,10 @@ desired effect
         <footer class="main-footer">
             <!-- To the right -->
             <div class="pull-right hidden-xs">
-                Anything you want
+                Powered by: Jim Raynor
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
         </footer>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
