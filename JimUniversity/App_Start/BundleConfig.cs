@@ -31,7 +31,7 @@ namespace JimUniversity
                       "~/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
                       ).Include("~/Content/font-awesome.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new ScriptBundle("~/admin-lte/js").Include(
+            bundles.Add(new ScriptBundle("~/admin-lte/js/js").Include(
              "~/admin-lte/js/adminlte.js",
              "~/admin-lte/plugins/fastclick/fastclick.js",
              "~/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"
