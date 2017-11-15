@@ -6,6 +6,11 @@
   <mvcSiteMapNode title="Home" controller="Home" action="Index">
     <mvcSiteMapNode title="About" controller="Home" action="About"/>
     <mvcSiteMapNode title="Contact" controller="Home" action="Contact"/>
+    <mvcSiteMapNode title="Student" controller="Student" action="Index">
+      <mvcSiteMapNode title="Create" controller="Student" action="Create" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Details" controller="Student" action="Details" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Edit" controller="Student" action="Edit" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Delete" controller="Student" action="Delete" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
   </mvcSiteMapNode>
-
 </mvcSiteMap>

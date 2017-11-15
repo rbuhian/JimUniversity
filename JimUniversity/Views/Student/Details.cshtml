@@ -2,49 +2,76 @@
 
 @{
     ViewBag.Title = "Details";
+    ViewBag.Current = "student";
 }
 
-<h2>Details</h2>
+<div class="box box-primary">
+    <div class="box-body">
+        <div>
+            <h4>Student</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
 
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.MiddleName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MiddleName)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.MiddleName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MiddleName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.EnrollmentDate)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.EnrollmentDate)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Enrollments)
+                </dt>
 
-    </dl>
+                <dd>
+                    <table class="table">
+                        <tr>
+                            <th>Course Title</th>
+                            <th>Grade</th>
+                        </tr>
+                        @foreach (var item in Model.Enrollments)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Course.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Grade)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        
