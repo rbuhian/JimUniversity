@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using JimUniversity.DAL;
 using JimUniversity.Models;
+using PagedList;
 
 namespace JimUniversity.Controllers
 {
@@ -16,9 +15,50 @@ namespace JimUniversity.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Student
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Students.ToList());
+            ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParam = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+            var students = from s in db.Students
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString)
+                                        || s.FirstName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.LastName);
+                    break;
+                case "Date":
+                    students = students.OrderBy(s => s.EnrollmentDate);
+                    break;
+                case "date_desc":
+                    students = students.OrderByDescending(s => s.EnrollmentDate);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.LastName);
+                    break;
+            }
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            return View(students.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Student/Details/5
@@ -99,11 +139,15 @@ namespace JimUniversity.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, bool? saveChangesError=false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists consult your friendly system administrator.";
             }
             Student student = db.Students.Find(id);
             if (student == null)
@@ -114,13 +158,21 @@ namespace JimUniversity.Controllers
         }
 
         // POST: Student/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Student student = db.Students.Find(id);
-            db.Students.Remove(student);
-            db.SaveChanges();
+            try
+            {
+                Student student = db.Students.Find(id);
+                db.Students.Remove(student);
+                db.SaveChanges();
+            }
+            catch(DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.)
+            }
+            
             return RedirectToAction("Index");
         }
 
