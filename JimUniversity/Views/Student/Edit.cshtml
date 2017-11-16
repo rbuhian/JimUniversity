@@ -1,7 +1,8 @@
 ﻿@model JimUniversity.Models.Student
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Students";
+    ViewBag.SubTitle = "(edit)";
     ViewBag.Current = "student";
 }
 
@@ -12,7 +13,6 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>Student</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.ID)
