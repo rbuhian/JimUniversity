@@ -174,25 +174,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711141125579_InitialCreate.cs" />
-    <Compile Include="Migrations\201711141125579_InitialCreate.Designer.cs">
-      <DependentUpon>201711141125579_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201711170845264_InitialCreate.cs" />
+    <Compile Include="Migrations\201711170845264_InitialCreate.Designer.cs">
+      <DependentUpon>201711170845264_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711160345035_Added-annotation.cs" />
-    <Compile Include="Migrations\201711160345035_Added-annotation.Designer.cs">
-      <DependentUpon>201711160345035_Added-annotation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711160534024_MaxLengthonNames.cs" />
-    <Compile Include="Migrations\201711160534024_MaxLengthonNames.Designer.cs">
-      <DependentUpon>201711160534024_MaxLengthonNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711160547006_ColumnFirstName.cs" />
-    <Compile Include="Migrations\201711160547006_ColumnFirstName.Designer.cs">
-      <DependentUpon>201711160547006_ColumnFirstName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711160749158_ComplexDataModel.cs" />
-    <Compile Include="Migrations\201711160749158_ComplexDataModel.Designer.cs">
-      <DependentUpon>201711160749158_ComplexDataModel.cs</DependentUpon>
+    <Compile Include="Migrations\201711170948279_ComplexDataModel.cs" />
+    <Compile Include="Migrations\201711170948279_ComplexDataModel.Designer.cs">
+      <DependentUpon>201711170948279_ComplexDataModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -7373,6 +7361,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -7384,20 +7373,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711141125579_InitialCreate.resx">
-      <DependentUpon>201711141125579_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711170845264_InitialCreate.resx">
+      <DependentUpon>201711170845264_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711160345035_Added-annotation.resx">
-      <DependentUpon>201711160345035_Added-annotation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711160534024_MaxLengthonNames.resx">
-      <DependentUpon>201711160534024_MaxLengthonNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711160547006_ColumnFirstName.resx">
-      <DependentUpon>201711160547006_ColumnFirstName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711160749158_ComplexDataModel.resx">
-      <DependentUpon>201711160749158_ComplexDataModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711170948279_ComplexDataModel.resx">
+      <DependentUpon>201711170948279_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

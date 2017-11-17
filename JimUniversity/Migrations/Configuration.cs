@@ -1,19 +1,18 @@
 namespace JimUniversity.Migrations
 {
-    using JimUniversity.DAL;
     using JimUniversity.Models;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using JimUniversity.DAL;
 
     internal sealed class Configuration : DbMigrationsConfiguration<JimUniversity.DAL.SchoolContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "JimUniversity.DAL.SchoolContext";
         }
 
         protected override void Seed(JimUniversity.DAL.SchoolContext context)
@@ -22,27 +21,25 @@ namespace JimUniversity.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-
             var students = new List<Student>
             {
-                new Student { FirstName = "Carson",   LastName = "Alexander",
+                new Student { FirstName = "Carson",     MiddleName = "Test 1",  LastName = "Alexander",
                     EnrollmentDate = DateTime.Parse("2010-09-01") },
-                new Student { FirstName = "Meredith", LastName = "Alonso",
+                new Student { FirstName = "Meredith",MiddleName = "Test 2",  LastName = "Alonso",
                     EnrollmentDate = DateTime.Parse("2012-09-01") },
-                new Student { FirstName = "Arturo",   LastName = "Anand",
+                new Student { FirstName = "Arturo",  MiddleName = "Test 3",  LastName = "Anand",
                     EnrollmentDate = DateTime.Parse("2013-09-01") },
-                new Student { FirstName = "Gytis",    LastName = "Barzdukas",
+                new Student { FirstName = "Gytis",   MiddleName = "Test 4",  LastName = "Barzdukas",
                     EnrollmentDate = DateTime.Parse("2012-09-01") },
-                new Student { FirstName = "Yan",      LastName = "Li",
+                new Student { FirstName = "Yan",     MiddleName = "Test 5",  LastName = "Li",
                     EnrollmentDate = DateTime.Parse("2012-09-01") },
-                new Student { FirstName = "Peggy",    LastName = "Justice",
+                new Student { FirstName = "Peggy",   MiddleName = "Test 6",  LastName = "Justice",
                     EnrollmentDate = DateTime.Parse("2011-09-01") },
-                new Student { FirstName = "Laura",    LastName = "Norman",
+                new Student { FirstName = "Laura",   MiddleName = "Test 7",  LastName = "Norman",
                     EnrollmentDate = DateTime.Parse("2013-09-01") },
-                new Student { FirstName = "Nino",     LastName = "Olivetto",
-                    EnrollmentDate = DateTime.Parse("2005-09-01") }
+                new Student { FirstName = "Nino",    MiddleName = "Test 8",  LastName = "Olivetto",
+                    EnrollmentDate = DateTime.Parse("2005-08-11") }
             };
-
             students.ForEach(s => context.Students.AddOrUpdate(p => p.LastName, s));
             context.SaveChanges();
 

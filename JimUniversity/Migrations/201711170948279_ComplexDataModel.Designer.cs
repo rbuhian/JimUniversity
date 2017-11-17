@@ -7,13 +7,13 @@ namespace JimUniversity.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class MaxLengthonNames : IMigrationMetadata
+    public sealed partial class ComplexDataModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MaxLengthonNames));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ComplexDataModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711160534024_MaxLengthonNames"; }
+            get { return "201711170948279_ComplexDataModel"; }
         }
         
         string IMigrationMetadata.Source

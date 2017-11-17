@@ -3,7 +3,7 @@ namespace JimUniversity.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Addedannotation : DbMigration
+    public partial class ComplexDataModel : DbMigration
     {
         public override void Up()
         {
