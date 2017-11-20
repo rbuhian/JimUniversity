@@ -36,8 +36,8 @@ namespace JimUniversity.Controllers
             {
                 ViewBag.CourseID = courseID.Value;
                 // Lazy loading
-                viewModel.Enrollments = viewModel.Courses.Where(
-                    x => x.CourseID == courseID).Single().Enrollments;
+                //viewModel.Enrollments = viewModel.Courses.Where(
+                //    x => x.CourseID == courseID).Single().Enrollments;
                 //Explicit loading
                 var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
                 db.Entry(selectedCourse).Collection(x => x.Enrollments).Load();
