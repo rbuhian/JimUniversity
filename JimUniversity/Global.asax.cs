@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using JimUniversity.DAL;
+using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using JimUniversity.Migrations;
 
 namespace JimUniversity
 {
@@ -16,6 +15,8 @@ namespace JimUniversity
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer<SchoolContext>(new MigrateDatabaseToLatestVersion<SchoolContext, Configuration>());
         }
     }
 }

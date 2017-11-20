@@ -3,7 +3,6 @@ namespace JimUniversity.Migrations
     using JimUniversity.Models;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using JimUniversity.DAL;
