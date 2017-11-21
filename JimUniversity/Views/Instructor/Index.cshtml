@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Instructors";
-    ViewBag.SubTitle = "listing";
+    ViewBag.SubTitle = "(listing)";
     ViewBag.Current = "instructor";
 }
 
@@ -18,6 +18,7 @@
                 <th>First Name</th>
                 <th>Hire Date</th>
                 <th>Office</th>
+                <th>Courses</th>
                 <th></th>
             </tr>
 
@@ -42,6 +43,14 @@
                         @if (item.OfficeAssignment != null)
                 {
                             @item.OfficeAssignment.Location
+                        }
+                    </td>
+                    <td>
+                        @{ 
+                            foreach (var course in item.Courses)
+                            {
+                                @course.CourseID @: @course.Title <br />
+                            }
                         }
                     </td>
                     <td>
