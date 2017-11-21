@@ -30,7 +30,7 @@ namespace JimUniversity.Models
         [Display(Name = "Full Name")]
         public string FullName
         {
-            get { return FirstName + " " + MiddleName + " " + LastName;  }
+            get { return LastName + ", " + FirstName + " " + MiddleName; }
         }
 
         public virtual ICollection<Course> Courses { get; set; }

@@ -41,7 +41,7 @@ namespace JimUniversity.Controllers
         // GET: Department/Create
         public ActionResult Create()
         {
-            ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "LastName");
+            ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "FullName");
             return View();
         }
 

@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201711170948279_ComplexDataModel.Designer.cs">
       <DependentUpon>201711170948279_ComplexDataModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711210702281_Department-Stored-Proc.cs" />
+    <Compile Include="Migrations\201711210702281_Department-Stored-Proc.Designer.cs">
+      <DependentUpon>201711210702281_Department-Stored-Proc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
@@ -7392,6 +7396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711170948279_ComplexDataModel.resx">
       <DependentUpon>201711170948279_ComplexDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711210702281_Department-Stored-Proc.resx">
+      <DependentUpon>201711210702281_Department-Stored-Proc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
