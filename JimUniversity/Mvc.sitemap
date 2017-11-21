@@ -24,5 +24,11 @@
       <mvcSiteMapNode title="Edit" controller="Instructor" action="Edit" preservedRouteParameters="id"/>
       <mvcSiteMapNode title="Delete" controller="Instructor" action="Delete" preservedRouteParameters="id"/>
     </mvcSiteMapNode>
+    <mvcSiteMapNode title="Department" controller="Department" action="Index" preservedRouteParameters="id">
+      <mvcSiteMapNode title="Create" controller="Department" action="Create" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Details" controller="Department" action="Details" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Edit" controller="Department" action="Edit" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Delete" controller="Department" action="Delete" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
   </mvcSiteMapNode>
 </mvcSiteMap>
