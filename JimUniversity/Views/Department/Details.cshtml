@@ -1,50 +1,54 @@
 ﻿@model JimUniversity.Models.Department
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Departments";
+    ViewBag.SubTitle = "(details)";
+    ViewBag.Current = "department";
 }
 
-<h2>Details</h2>
+<div class="box box-primary">
+    <div class="box-body">
 
-<div>
-    <h4>Department</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Budget)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Budget)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Budget)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Budget)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.StartDate)
+                </dd>
 
-        <dt>
-            Administrator
-        </dt>
+                <dt>
+                    Administrator
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Administrator.FullName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Administrator.FullName)
+                </dd>
 
-    </dl>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.DepartmentID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DepartmentID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
