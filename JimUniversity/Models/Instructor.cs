@@ -4,34 +4,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JimUniversity.Models
 {
-    public class Instructor
+    public class Instructor : Person
     {
-        public int ID { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        [StringLength(50)]
-        public string LastName { get; set; }
-
-        [Required]
-        [Display(Name = "First Name")]
-        [StringLength(50)]
-        public string FirstName { get; set; }
-
-        [Display(Name = "Middle Name")]
-        [StringLength(50)]
-        public string MiddleName { get; set; }
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Hire Date")]
         public DateTime HireDate { get; set; }
-
-        [Display(Name = "Full Name")]
-        public string FullName
-        {
-            get { return LastName + ", " + FirstName + " " + MiddleName; }
-        }
 
         public virtual ICollection<Course> Courses { get; set; }
         public virtual OfficeAssignment OfficeAssignment { get; set; }
