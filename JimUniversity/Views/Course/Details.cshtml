@@ -1,43 +1,46 @@
 ﻿@model JimUniversity.Models.Course
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Courses";
+    ViewBag.Current = "course";
     ViewBag.Current = "course";
 }
 
-<h2>Details</h2>
+<div class="box box-primary">
+    <div class="box-body">
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Department.Name)
-        </dt>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Department.Name)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Department.Name)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Department.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Credits)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Credits)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Credits)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Credits)
+                </dd>
 
-    </dl>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
